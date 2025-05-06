@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Основы кибербезопасности</title>
+  <style>
+    :root {
+      --bg-dark: #121212;
+      --surface-dark: #1e1e1e;
+      --surface-dark-alt: #1f1f1f;
+      --text-main: #e0e0e0;
+      --text-muted: #b5b5b5;
+      --accent: #0d6efd;
+      --accent-hover: #4da3ff;
+    }
+
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      background: var(--bg-dark);
+      color: var(--text-main);
+    }
+
+    header {
+      background: var(--surface-dark-alt);
+      color: var(--text-main);
+      padding: 2rem 1rem;
+      text-align: center;
+    }
+
+    nav {
+      background: var(--surface-dark-alt);
+      padding: 0.5rem;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      border-bottom: 1px solid #2b2b2b;
+    }
+
+    nav a {
+      color: var(--accent);
+      margin: 0 0.6rem;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 0.95rem;
+    }
+
+    nav a:hover {
+      color: var(--accent-hover);
+    }
+
+    section {
+      max-width: 900px;
+      margin: 2rem auto;
+      background: var(--surface-dark);
+      padding: 1.6rem 2rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
+    }
+
+    h2 {
+      color: var(--accent-hover);
+    }
+
+    ul li, ol li {
+      margin-bottom: 0.6rem;
+    }
+
+    code {
+      background: #292929;
+      padding: 0 4px;
+      border-radius: 4px;
+      font-size: 0.9em;
+    }
+
+    footer {
+      background: var(--surface-dark-alt);
+      color: var(--text-muted);
+      text-align: center;
+      padding: 1rem;
+      margin-top: 3rem;
+      font-size: 0.85rem;
+    }
+
+    a {
+      color: var(--accent-hover);
+    }
+
+    a:hover {
+      color: #ffffff;
+    }
+
+    /* Адаптивность */
+    @media (max-width: 600px) {
+      nav {
+        overflow-x: auto;
+        white-space: nowrap;
+      }
+      nav a {
+        display: inline-block;
+        margin: 0 0.4rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Основы кибербезопасности</h1>
+  <p>Краткий гид по защите себя и своих данных в сети</p>
+</header>
+
+<nav>
+  <a href="#overview">Почему это важно?</a>
+  <a href="#threats">Угрозы</a>
+  <a href="#tips">10 советов</a>
+  <a href="#passwords">Пароли</a>
+  <a href="#social">Соцсети</a>
+  <a href="#wifi">Wi‑Fi VPN</a>
+  <a href="#shopping">Покупки</a>
+  <a href="#kids">Детям</a>
+  <a href="#resources">Ресурсы</a>
+</nav>
+
+<main>
+  <section id="overview">
+    <h2>Почему кибербезопасность важна</h2>
+    <p>Каждый день мы оставляем цифровой след: работаем в «облаке», ведём переписку, совершаем онлайн‑платежи. Любая утечка данных может привести к финансовым потерям, репутационным рискам и даже к краже личности. Базовые знания по кибербезопасности снижают вероятность инцидентов на 80 %.</p>
+  </section>
+
+  <section id="threats">
+    <h2>Распространённые угрозы</h2>
+    <ul>
+      <li><strong>Фишинг</strong> — письма и сайты‑подделки, собирающие логины и банковские данные.</li>
+      <li><strong>Вредоносное ПО</strong> — вирусы, трояны, шпионы, получающие контроль над устройствами.</li>
+      <li><strong>Ransomware</strong> — шифрует файлы и требует выкуп за расшифровку.</li>
+      <li><strong>Социальная инженерия</strong> — манипуляция человеком вместо взлома техники.</li>
+      <li><strong>Brute‑force</strong> — автоматический подбор паролей к аккаунтам.</li>
+      <li><strong>Сниффинг Wi‑Fi</strong> — перехват трафика в публичных сетях.</li>
+    </ul>
+  </section>
+
+  <section id="tips">
+    <h2>10 быстрых советов</h2>
+    <ol>
+      <li>Создавайте <strong>длинные уникальные пароли</strong> (12+ символов) и храните их в менеджере.</li>
+      <li>Включайте <strong>2‑факторную аутентификацию</strong> (SMS или приложение‑генератор кодов).</li>
+      <li>Обновляйте ОС и приложения сразу после выхода патчей.</li>
+      <li>Не открывайте подозрительные вложения и ссылки.</li>
+      <li>Используйте официальный магазин приложений.</li>
+      <li>Шифруйте диск ноутбука и включайте PIN/биометрию на смартфоне.</li>
+      <li>Подключайтесь к публичному Wi‑Fi только через VPN.</li>
+      <li>Перед оплатой онлайн проверяйте HTTPS и домен сайта.</li>
+      <li>Проверяйте свои аккаунты на утечки на «Have I Been Pwned».</li>
+      <li>Делайте резервные копии важных данных минимум раз в месяц.</li>
+    </ol>
+  </section>
+
+  <section id="passwords">
+    <h2>Пароли и менеджеры паролей</h2>
+    <p>Пароль — первая линия обороны. <strong>Не используйте один и тот же пароль</strong> для разных сервисов: если он утечёт, злоумышленники получат доступ ко всему.</p>
+    <ul>
+      <li>Формула надёжного пароля: <em>длина &gt; сложность</em>. Лучше фраза <code>Lisboa‑tram‑28‑sunny!</code>, чем <code>P@55w0rd</code>.</li>
+      <li>Популярные менеджеры: Bitwarden, 1Password, KeePass. Они генерируют и запоминают сотни уникальных паролей.</li>
+      <li>Активируйте биометрию + мастер‑пароль для доступа к менеджеру.</li>
+    </ul>
+  </section>
+
+  <section id="social">
+    <h2>Безопасность в социальных сетях</h2>
+    <p>Соцсети — лакомая цель для киберпреступников. Защититесь так:</p>
+    <ul>
+      <li>Сделайте личный профиль приватным, особенно данные о доме и месте работы.</li>
+      <li>Отключите автоматическую геолокацию на фото.</li>
+      <li>Принимайте запросы в друзья только от знакомых.</li>
+      <li>Не публикуйте фото документов, билетов и банковских карт.</li>
+      <li>Периодически проверяйте активные сессии и отключайте лишние устройства.</li>
+    </ul>
+  </section>
+
+  <section id="wifi">
+    <h2>Публичные Wi‑Fi и VPN</h2>
+    <p>Обычный незашифрованный Wi‑Fi в кафе легко «прослушать» с помощью сниффера. Лучшие практики:</p>
+    <ul>
+      <li>Используйте VPN‑клиент с протоколом WireGuard или IKEv2.</li>
+      <li>Не заходите в онлайн‑банк без VPN и HTTPS.</li>
+      <li>Отключите автоматическое подключение к открытым сетям на телефоне.</li>
+      <li>Заведите раздельные сети — «гостевую» для друзей и IoT‑устройств дома.</li>
+    </ul>
+  </section>
+
+  <section id="shopping">
+    <h2>Безопасные покупки и банковские операции</h2>
+    <ul>
+      <li>Проверяйте доменное имя: злоумышленники подменяют буквы (например, rn вместо m).</li>
+      <li>В браузере ищите значок замка <small>(HTTPS)</small>; кликом проверьте сертификат.</li>
+      <li>Подключите SMS‑ или push‑подтверждения всех платежей.</li>
+      <li>Храните лимитированную сумму на виртуальной карте для онлайн‑покупок.</li>
+    </ul>
+  </section>
+
+  <section id="kids">
+    <h2>Детям и родителям</h2>
+    <p>Ребёнок — лёгкая цель для фишинга и травли. Советы:</p>
+    <ul>
+      <li>Настройте родительский контроль на устройствах и в Google Family Link.</li>
+      <li>Объясните правила: не разглашать адрес школы, телефон и фото документов.</li>
+      <li>Проводите «цифровые пятиминутки»: вместе просматривайте настройки аккаунтов.</li>
+      <li>Защитите игровые аккаунты 2FA — они стоят денег.</li>
+    </ul>
+  </section>
+
+  <section id="resources">
+    <h2>Полезные ресурсы</h2>
+    <ul>
+      <li><a href="https://www.kaspersky.ru/resource-center" target="_blank" rel="noopener">Kaspersky Resource Center</a></li>
+      <li><a href="https://www.cybersecurity.ru/" target="_blank" rel="noopener">CyberSecurity.ru</a></li>
+      <li><a href="https://www.cert.gov.ru/" target="_blank" rel="noopener">CERT‑GOV‑RU</a></li>
+      <li><a href="https://haveibeenpwned.com/" target="_blank" rel="noopener">Have I Been Pwned?</a></li>
+      <li><a href="https://ssd.eff.org/ru" target="_blank" rel="noopener">EFF Surveillance Self‑Defense</a></li>
+    </ul>
+  </section>
+</main>
+
+<footer>
+  <p>&copy; 2025 Учебный проект. Информация предоставлена исключительно в образовательных целях.</p>
+</footer>
