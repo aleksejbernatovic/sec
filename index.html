@@ -15,6 +15,9 @@
     }
 
     * { box-sizing: border-box; }
+    html {
+      scroll-behavior: smooth;
+    }
     body {
       margin: 0;
       font-family: Arial, sans-serif;
@@ -28,6 +31,7 @@
       color: var(--text-main);
       padding: 2rem 1rem;
       text-align: center;
+      animation: fadeIn 2s ease-in;
     }
 
     nav {
@@ -38,6 +42,9 @@
       top: 0;
       z-index: 1000;
       border-bottom: 1px solid #2b2b2b;
+      overflow-x: auto;
+      white-space: nowrap;
+      animation: slideDown 1s ease-out;
     }
 
     nav a {
@@ -46,6 +53,7 @@
       text-decoration: none;
       font-weight: bold;
       font-size: 0.95rem;
+      transition: color 0.3s ease;
     }
 
     nav a:hover {
@@ -53,16 +61,19 @@
     }
 
     section {
+      scroll-margin-top: 80px;
       max-width: 900px;
       margin: 2rem auto;
       background: var(--surface-dark);
       padding: 1.6rem 2rem;
       border-radius: 8px;
       box-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
+      animation: fadeInUp 1s ease;
     }
 
     h2 {
       color: var(--accent-hover);
+      animation: fadeIn 1.2s ease-in-out;
     }
 
     ul li, ol li {
@@ -93,12 +104,22 @@
       color: #ffffff;
     }
 
-    /* Адаптивность */
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes slideDown {
+      from { transform: translateY(-100%); }
+      to { transform: translateY(0); }
+    }
+
     @media (max-width: 600px) {
-      nav {
-        overflow-x: auto;
-        white-space: nowrap;
-      }
       nav a {
         display: inline-block;
         margin: 0 0.4rem;
@@ -122,6 +143,12 @@
   <a href="#wifi">Wi‑Fi VPN</a>
   <a href="#shopping">Покупки</a>
   <a href="#kids">Детям</a>
+  <a href="#encryption">Шифрование</a>
+  <a href="#incidents">Реагирование</a>
+  <a href="#tools">Инструменты</a>
+  <a href="#stats">Статистика 2024</a>
+  <a href="#legal">Законы</a>
+  <a href="#career">Карьера</a>
   <a href="#resources">Ресурсы</a>
 </nav>
 
@@ -213,12 +240,88 @@
     </ul>
   </section>
 
+  <section id="encryption">
+    <h2>Шифрование данных</h2>
+    <p>Шифрование превращает ваши данные в нечитаемый набор символов, который может быть расшифрован только с правильным ключом. Даже если злоумышленник перехватит зашифрованный файл, без ключа он бесполезен.</p>
+    <ul>
+      <li><strong>End‑to‑End Encryption (E2EE)</strong> — только отправитель и получатель могут читать сообщения (Signal, Element, WhatsApp).</li>
+      <li><strong>Диск — >Фулл‑диск шифрование</strong> (BitLocker, VeraCrypt) защищает ваш ноутбук при краже.</li>
+      <li><strong>PGP/GPG</strong> — стандарт шифрования электронных писем и файлов.</li>
+    </ul>
+    <p><em>Рекомендация:</em> Храните резервную копию ключей на офлайн‑носителе, чтобы не потерять доступ при сбое компьютера.</p>
+  </section>
+
+  <section id="incidents">
+    <h2>Что делать при инциденте?</h2>
+    <ol>
+      <li><strong>Отключите устройство</strong> от Интернета, чтобы прекратить утечку данных.</li>
+      <li><strong>Сделайте снимок экрана</strong> или сохраните журналы — они нужны для расследования.</li>
+      <li><strong>Сообщите</strong> в ИТ‑отдел или провайдеру услуги (банк, облачный сервис).</li>
+      <li><strong>Смените пароли</strong> всех затронутых аккаунтов с другого доверенного устройства.</li>
+      <li><strong>Подайте заявление</strong> в правоохранительные органы, если украдены деньги или данные.</li>
+    </ol>
+    <p>Наличие готового <code>Incident Response Plan</code> сокращает время простоя и убытки компании в среднем на 37&nbsp;%.</p>
+  </section>
+
+  <section id="tools">
+    <h2>Рекомендуемые инструменты безопасности</h2>
+    <ul>
+      <li><strong>Антивирусы</strong>: Kaspersky, ESET, Windows Defender.</li>
+      <li><strong>VPN‑сервисы</strong>: Mullvad, ProtonVPN, IVPN (протокол WireGuard).</li>
+      <li><strong>Менеджеры паролей</strong>: Bitwarden, KeePassXC.</li>
+      <li><strong>Расширения браузера</strong>: uBlock Origin, HTTPS Everywhere, Privacy Badger.</li>
+      <li><strong>Мониторинг утечек</strong>: Firefox Monitor, Have I Been Pwned.</li>
+      <li><strong>Резервное копирование</strong>: BorgBackup, Backblaze.</li>
+    </ul>
+  </section>
+
+  <section id="stats">
+    <h2>Кибер‑статистика 2024 г.</h2>
+    <ul>
+      <li>Было зафиксировано <strong>5,5 млрд</strong> скомпрометированных записей (+12 % к 2023 г.).</li>
+      <li><strong>Фишинг</strong> остаётся главным вектором атаки — 36 % всех инцидентов.</li>
+      <li>Средний выкуп за <em>ransomware</em> вырос до <strong>$1,54 млн</strong>.</li>
+      <li>Ущерб от BEC‑мошенничества в мире превысил <strong>$2,4 млрд</strong>.</li>
+    </ul>
+    <p>Источник: отчёты Verizon DBIR 2024, ENISA Threat Landscape 2024.</p>
+  </section>
+
+  <section id="legal">
+  <h2>Кибербезопасность и закон</h2>
+  <p>Правила работы с персональными данными строго регулируются на национальном и международном уровне. Игнорирование может привести к штрафам до 4 % мирового оборота компании.</p>
+  <ul>
+    <li><strong>GDPR</strong> (ЕС) — контроль над данными граждан Евросоюза.</li>
+    <li><strong>Федеральный закон 152‑ФЗ</strong> (РФ) — защита персональных данных россиян.</li>
+    <li><strong>Закон Республики Беларусь от 7 мая 2021 г. № 99‑З</strong> — «О защите персональных данных».</li>
+    <li><strong>HIPAA</strong> (США) — безопасность медицинских записей.</li>
+    <li><strong>PCI‑DSS</strong> — защита данных платёжных карт (банки и интернет‑магазины).</li>
+  </ul>
+ </section>
+
+  <section id="career">
+    <h2>Карьера в кибербезопасности</h2>
+    <p>Сфера безопасности растёт на 35 % в год, и спрос на специалистов превышает предложение. Популярные направления:</p>
+    <ol>
+      <li><strong>SOC‑аналитик</strong> — мониторинг инцидентов 24/7.</li>
+      <li><strong>Пентестер (этичный хакер)</strong> — поиск уязвимостей в системах.</li>
+      <li><strong>Инженёр DevSecOps</strong> — встроенная безопасность в CI/CD.</li>
+      <li><strong>Архитектор безопасности</strong> — создание стратегии защиты предприятия.</li>
+    </ol>
+    <p><em>Как начать:</em></p>
+    <ol>
+      <li>Изучите основы сетей (TCP/IP) и систем (Linux).</li>
+      <li>Пройдите интерактивные лаборатории на платформах <a href="https://tryhackme.com" target="_blank" rel="noopener">TryHackMe</a> и <a href="https://www.hackthebox.com" target="_blank" rel="noopener">Hack The Box</a>.</li>
+      <li>Получите базовый сертификат CompTIA Security+, затем OSCP или аналог.</li>
+      <li>Участвуйте в соревнованиях CTF, чтобы пополнить портфолио.</li>
+    </ol>
+  </section>
+
   <section id="resources">
     <h2>Полезные ресурсы</h2>
     <ul>
       <li><a href="https://www.kaspersky.ru/resource-center" target="_blank" rel="noopener">Kaspersky Resource Center</a></li>
       <li><a href="https://haveibeenpwned.com/" target="_blank" rel="noopener">Have I Been Pwned?</a></li>
-      <li><a href="https://ssd.eff.org/ru" target="_blank" rel="noopener">EFF Surveillance Self‑Defense</a></li>
+      <li><a href="https://tryhackme.com" target="_blank" rel="noopener">TryHackMe — Лаборатории по хакерству</a></li>
     </ul>
   </section>
 </main>
@@ -226,3 +329,6 @@
 <footer>
   <p>&copy; 2025 Учебный проект. Бернатович Алексей.</p>
 </footer>
+
+</body>
+</html>
